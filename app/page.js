@@ -79,7 +79,12 @@ export default function Home() {
         agreePrivacy: formData.agreePrivacy ? "동의함" : "미동의"
       })
     })
-      .then(() => setSubmitted(true))
+      .then(() => {
+        setSubmitted(true);
+        if (typeof window !== 'undefined' && window.fbq) {
+          window.fbq('track', 'Lead');
+        }
+      })
       .catch((error) => alert('전송에 실패했습니다. 잠시 후 다시 시도해주세요.'));
   };
 
