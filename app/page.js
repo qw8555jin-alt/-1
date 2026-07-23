@@ -80,7 +80,15 @@ export default function Home() {
       })
     })
       .then(() => {
-        setSubmitted(true);
+        alert("🎉 무료 진단 신청이 완료되었습니다!\n\n순차적으로 배정된 전담 마케터가 상권 분석 후 24시간 이내에 연락드리겠습니다.");
+        setFormData({
+          name: '',
+          phone: '',
+          storeName: '',
+          budget: '120만원 (30명 최소)',
+          hasExperience: 'O',
+          agreePrivacy: false,
+        });
         if (typeof window !== 'undefined' && window.fbq) {
           window.fbq('track', 'Lead');
         }
@@ -351,16 +359,7 @@ export default function Home() {
               지금 신청하시면 전담 마케터가 상권을 분석하여<br/>샤오홍슈 상위노출 시크릿 전략을 제안해 드립니다.
             </p>
 
-            {submitted ? (
-              <div className={styles.successBox}>
-                <div className={styles.successIcon}>🎉</div>
-                <h3 className={styles.successTitle}>무료 진단 신청이 완료되었습니다!</h3>
-                <p className={styles.successText}>
-                  순차적으로 배정된 전담 마케터가 상권 분석 후 24시간 이내에 연락드리겠습니다.
-                </p>
-              </div>
-            ) : (
-              <form 
+            <form 
                 onSubmit={handleSubmit} 
                 className={styles.formGrid}
                 name="contact"
@@ -485,7 +484,6 @@ export default function Home() {
                   </button>
                 </div>
               </form>
-            )}
           </div>
         </div>
       </section>
