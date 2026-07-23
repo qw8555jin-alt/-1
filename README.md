@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 샤오홍슈 체험단 마케팅 랜딩페이지
 
-## Getting Started
+이 프로젝트는 무비자 입국 특수를 맞아 중국인 관광객 수요를 잡고자 하는 국내 오프라인 매장(식당, 카페, 뷰티, 피부과, 성형외과 등) 대표님들을 대상으로 샤오홍슈 체험단(광고주 모집)을 제안하기 위해 구축된 세일즈 랜딩페이지입니다.
 
-First, run the development server:
+## 기능 및 특징
+
+- **프리미엄 디자인**: 다크모드와 강렬한 레드 포인트(샤오홍슈 컬러)를 조합하여 중국 타겟 마케팅의 전문성을 강조.
+- **히어로 섹션**: "중국 자본 쓸어모을 대표님 구한다"라는 후킹성 카피라이팅과 고품질 AI 생성 이미지를 통한 시각적 압도.
+- **최적화된 CTA**: 직관적인 마이크로 애니메이션과 호버 효과를 통해 전환율을 극대화.
+- **SEO & 성능 최적화**: Next.js App Router를 사용하여 초기 로딩 속도를 높이고 검색엔진에 친화적으로 구성.
+
+## 개발 스택
+
+- **프레임워크**: Next.js 15 (App Router)
+- **스타일링**: CSS Modules / Vanilla CSS (글래스모피즘 효과 적용)
+- **패키지 매니저**: npm
+
+## 로컬 실행 방법
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+브라우저에서 `http://localhost:3000`을 열어 확인하실 수 있습니다.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 빌드 테스트 방법
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+npm ci
+npm run build
+```
+배포 전 빌드 안정성을 확인하기 위해 위 명령어를 실행합니다.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 라이선스
+Copyright (c) 2026 Xiaohongshu Marketing Partners. All rights reserved.
