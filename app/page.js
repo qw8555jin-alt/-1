@@ -21,7 +21,7 @@ export default function Home() {
   const [toastData, setToastData] = useState({ visible: false, name: '' });
 
   useEffect(() => {
-    // 7초마다 토스트 띄우기 (3초 유지)
+    // 9초마다 토스트 띄우기 (3초 유지)
     const interval = setInterval(() => {
       const lastNames = ['김', '이', '박', '최', '정', '강', '조', '윤', '장', '임', '한', '오', '서', '신', '권', '황', '안', '송', '전', '홍'];
       const firstNames = ['진', '수', '영', '현', '민', '훈', '희', '성', '우', '준', '연', '지', '은', '환', '철', '호', '원', '경', '빈'];
@@ -35,7 +35,7 @@ export default function Home() {
       setTimeout(() => {
         setToastData((prev) => ({ ...prev, visible: false }));
       }, 3000);
-    }, 7000);
+    }, 9000);
 
     return () => clearInterval(interval);
   }, []);
