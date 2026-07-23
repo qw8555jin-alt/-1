@@ -70,7 +70,7 @@ export default function Home() {
         .join("&");
     };
 
-    fetch("/", {
+    fetch("/dummy_form.html", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ 
