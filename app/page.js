@@ -63,7 +63,24 @@ export default function Home() {
       alert('개인정보 수집 및 이용에 동의해주세요.');
       return;
     }
-    setSubmitted(true);
+
+    const encode = (data) => {
+      return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+    };
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ 
+        "form-name": "contact",
+        ...formData,
+        agreePrivacy: formData.agreePrivacy ? "동의함" : "미동의"
+      })
+    })
+      .then(() => setSubmitted(true))
+      .catch((error) => alert('전송에 실패했습니다. 잠시 후 다시 시도해주세요.'));
   };
 
   const scrollToForm = () => {
@@ -338,7 +355,20 @@ export default function Home() {
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className={styles.formGrid}>
+              <form 
+                onSubmit={handleSubmit} 
+                className={styles.formGrid}
+                name="contact"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+              >
+                <input type="hidden" name="form-name" value="contact" />
+                <div style={{ display: 'none' }}>
+                  <label>
+                    Don’t fill this out if you're human: <input name="bot-field" />
+                  </label>
+                </div>
+                
                 <div className={styles.formGroup}>
                   <label className={styles.label}>이름 <span>*</span></label>
                   <input
